@@ -95,10 +95,11 @@
   --------------------------------------------- */
 
   #group1 {
-    z-index: 5; /* slide over group 2 */
+    z-index: 10; /* slide over group 2 */
+    height: 100vh;
   }
   #group1 .parallax__layer--base {
-    background: rgb(49, 49, 49);
+    background: rgb(15, 15, 15);
     color: white;
   }
 
@@ -108,6 +109,7 @@
   #group2 .parallax__layer--back {
     background: rgb(123,210,102);
   }
+
 
   #group3 {
     z-index: 4; /* slide over group 2 and 4 */
@@ -122,27 +124,27 @@
   #group4 .parallax__layer--deep {
     background: rgb(184,223,101);
   }
-
+/*
   #group5 {
-    z-index: 3; /* slide over group 4 and 6 */
+    z-index: 3;
   }
   #group5 .parallax__layer--base {
     background: rgb(214,229,100);
   }
 
   #group6 {
-    z-index: 2; /* slide under group 5 and 7 */
+    z-index: 2;
   }
   #group6 .parallax__layer--back {
     background: rgb(245,235,100);
   }
 
   #group7 {
-    z-index: 3; /* slide over group 7 */
+    z-index: 3;
   }
   #group7 .parallax__layer--base {
     background: rgb(255,241,100);
-  }
+  } */
 
 
   .demo__info {
@@ -200,7 +202,7 @@
         <div class="title">Deep Background Layer</div>
       </div>
     </div>
-
+<!--
     <div id="group5" class="parallax__group">
       <div class="parallax__layer parallax__layer--fore">
         <div class="title">Foreground Layer</div>
@@ -223,7 +225,7 @@
       <div class="parallax__layer parallax__layer--base">
         <div class="title">Base Layer</div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 

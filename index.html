@@ -1,5 +1,74 @@
 <html>
+  <style>
 
-<h1> HELLO </h1>
+body,html{
+  margin:0;
+  padding:0;
+  background-color: black;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+}
+
+.section {
+  position: relative;
+  height: 110vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+
+  transform: translateZ(-1px) scale(2);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.static {
+  background: lightblue;
+}
+
+.bg1::after {
+  background-image: url('files/back1.bmp');
+  background-position: top;
+}
+
+.bg2::after {
+  background-image: url('files/back2.bmp');
+  background-position: center;
+}
+  </style>
+
+  <body>
+    <main class="wrapper">
+      <section class="section parallax bg1">
+          <h1>Such Adorableness</hi>
+        </section>
+        <section class="section static">
+          <h1>Boring</h1>
+        </section>
+        <section class="section parallax bg2">
+          <h1>SO FWUFFY AWWW</hi>
+        </section>
+        <section class="section static">
+          <h1>Boring</h1>
+        </section>
+    </main>
+  </body>
 
 </html>

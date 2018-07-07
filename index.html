@@ -102,6 +102,7 @@
     /* background-size: 210%; */
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
   }
 
   #group3 {
@@ -121,18 +122,41 @@
     z-index: 3;
   }
   #group4 .parallax__layer--back {
-    background: rgb(230, 230, 230);
+    background-image: url("data/back_2.bmp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #group4 .parallax__layer--base {
+    color: white;
+  }
+
+  #group5 {
+    z-index: 3;
+  }
+  #group5 .parallax__layer--back {
+    background-image: url("data/back_3.bmp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #group5 .parallax__layer--base {
     color: black;
   }
 
+
+
+
   .demo__info {
-    position: absolute;
+    position: fixed;
     z-index:100;
     bottom: 5px;
     top: auto;
     font-size:70%;
     text-align:center;
     width: 100%;
+    color: red;
+    opacity: 0.3;
   }
 
   .row {
@@ -152,7 +176,7 @@
       vertical-align: middle;
   }
 
- /* span {
+  /* span {
     position: absolute;
 	top: 0px;
 	display: block;
@@ -171,9 +195,9 @@
   img:hover + span {
     top: -10px;
 	opacity: 1;
-  }   */
+  }   ​ */
 
-  @media only screen and (max-width: 500px) {
+  @media screen and (max-width: 800px) {
       .column {
           -ms-flex: 66.66%;
           flex: 66.66%;
@@ -222,13 +246,13 @@
         <div class="row">
             <div class="column">
               <img src="data/11.bmp" style="width: 100%; background-color: white;"></img>
-             
+            
             </div> <div class="column">
               <img src="data/12.bmp" style="width: 100%; background-color: white;"></img>
-              
+
               </div> <div class="column">
               <img src="data/13.bmp" style="width: 100%; background-color: white;"></img>
-              
+
             </div>
         </div>
       </div>
@@ -236,12 +260,37 @@
 
     <div id="group4" class="parallax__group">
       <div class="parallax__layer--base">
-        <div class="title"></div>
+        <div class="title">PHOTO EDITING</div>
       </div>
       <div class="parallax__layer--back">
-        <div class="title"> Coming soon...  </div>
       </div>
     </div>
+
+    <div id="group3" class="parallax__group">
+     <div class="parallax__layer--base">
+       <div class="row">
+           <div class="column">
+             <img src="data/21.png" style="width: 100%; background-color: white;"></img>
+
+           </div> <div class="column">
+             <img src="data/22.bmp" style="width: 100%; background-color: white;"></img>
+
+             </div> <div class="column">
+             <img src="data/23.jpg" style="width: 100%; background-color: white;"></img>
+
+           </div>
+       </div>
+     </div>
+    </div>
+
+    <div id="group5" class="parallax__group">
+      <div class="parallax__layer--base">
+        <div class="title">PROGRAMMING</div>
+      </div>
+      <div class="parallax__layer--back">
+      </div>
+    </div>
+
 
   </div>
 

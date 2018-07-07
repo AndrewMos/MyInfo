@@ -21,33 +21,39 @@
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  .parallax__layer {
+
+
+  .parallax__layer--fore {
+    -webkit-transform: translateZ(90px) scale(.7);
+    transform: translateZ(90px) scale(.7);
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
   }
-  .parallax__layer--fore {
-    -webkit-transform: translateZ(90px) scale(.7);
-    transform: translateZ(90px) scale(.7);
-    z-index: 1;
-  }
   .parallax__layer--base {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   .parallax__layer--back {
-    -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-300px) scale(2);
+    -webkit-transform: translateZ(-296px) scale(2);
+    transform: translateZ(-296px) scale(2);
     z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
-  .parallax__layer--deep {
-    -webkit-transform: translateZ(-600px) scale(3);
-    transform: translateZ(-600px) scale(3);
-    z-index: 2;
-  }
+
   /* demo styles
   --------------------------------------------- */
   body, html {
@@ -57,6 +63,7 @@
     font: 100% / 1.5 Arial;
   }
   * {
+    box-sizing: border-box;
     margin:0;
     padding:0;
   }
@@ -71,8 +78,7 @@
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    color: white;
-    font-size: 10vh;
+    font-size: 8vh;
     font-family: 'Gugi', cursive;
 
   }
@@ -80,6 +86,7 @@
   #group1 {
     z-index: 10;
     height: 100vh;
+    color: white;
   }
   #group1 .parallax__layer--base {
     background: rgb(15, 15, 15);
@@ -87,30 +94,36 @@
 
   #group2 {
     z-index: 2;
+    color: white;
   }
   #group2 .parallax__layer--back {
     background: rgb(24, 24, 24);
     background-image: url("data/back_circle.bmp");
-    background-size: 100%;
+    /* background-size: 210%; */
     background-position: center;
     background-repeat: no-repeat;
   }
 
   #group3 {
-    z-index: 3;
+    z-index: 4;
+    color: white;
+    height: 100vh;
   }
   #group3 .parallax__layer--base {
-    background: rgb(55, 55, 55);
+    /* background: rgb(15, 15, 15); */
+    text-align: center;
   }
+
+
+
 
   #group4 {
-    z-index: 2;
+    z-index: 3;
   }
   #group4 .parallax__layer--back {
-    background: rgb(0, 0, 0);
+    background: rgb(230, 230, 230);
+    color: black;
   }
-
-
 
   .demo__info {
     position: absolute;
@@ -121,6 +134,63 @@
     text-align:center;
     width: 100%;
   }
+
+  .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+  }
+
+  .column {
+      flex: 33.33%;
+      max-width: 33.33%;
+      padding: 15px 15px;
+  }
+
+  .column img {
+      margin-top: 8px;
+      vertical-align: middle;
+  }
+
+  span {
+    position: absolute;
+	top: 0px;
+	display: block;
+	width: 300px;
+	margin: 0;
+	padding: 0;
+	color: #444;
+	font-size: 18px;
+	text-decoration: none;
+	text-align: center;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+	opacity: 0;
+  }
+
+  img:hover + span {
+    top: -10px;
+	opacity: 1;
+  }   ​
+
+  @media screen and (max-width: 800px) {
+      .column {
+          -ms-flex: 66.66%;
+          flex: 66.66%;
+          max-width: 66.66%;
+      }
+      .column {
+          -ms-flex: 100%;
+          flex: 100%;
+          max-width: 100%;
+      }
+
+      #group3 {
+        height: 200vh;
+      }
+  }
+
+
 </style>
 </head>
 
@@ -133,71 +203,45 @@
   <div class="parallax">
 
     <div id="group1" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base">
+      <div class="parallax__layer--base">
         <div class="title">Andrew Moskovets</div>
       </div>
     </div>
 
     <div id="group2" class="parallax__group">
-      <div class="parallax__layer parallax__layer--back">
+      <div class="parallax__layer--back">
 
       </div>
-      <div class="parallax__layer parallax__layer--base">
+      <div class="parallax__layer--base">
         <div class="title">ILLUSTRATING</div>
       </div>
     </div>
 
      <div id="group3" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base">
-        <div class="title">Coming soon...</div>
-      </div>
-      <div class="parallax__layer parallax__layer--fore">
-        <div class="title">Coming soon...</div>
+      <div class="parallax__layer--base">
+        <div class="row">
+            <div class="column">
+              <img src="data/11.bmp" style="width: 100%; background-color: white;"></img>
+              <span> SOSOSOSOSO </span>
+            </div> <div class="column">
+              <img src="data/12.bmp" style="width: 100%; background-color: white;"></img>
+              <div class="photoinfo">snfkwe </div>
+              </div> <div class="column">
+              <img src="data/13.bmp" style="width: 100%; background-color: white;"></img>
+              <div class="photoinfo">o43539058 </div>
+            </div>
+        </div>
       </div>
     </div>
 
     <div id="group4" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base">
-        <div class="title">Coming soon...</div>
+      <div class="parallax__layer--base">
+        <div class="title"></div>
       </div>
-      <div class="parallax__layer parallax__layer--back">
-        <div class="title">Coming soon...</div>
-      </div>
-    </div>
-<!--
-    <div id="group4" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base">
-        <div class="title">Base Layer</div>
-      </div>
-      <div class="parallax__layer parallax__layer--back">
-        <div class="title">Background Layer</div>
-      </div>
-      <div class="parallax__layer parallax__layer--deep">
-        <div class="title">Deep Background Layer</div>
-      </div>
-    </div> -->
-<!--
-    <div id="group5" class="parallax__group">
-      <div class="parallax__layer parallax__layer--fore">
-        <div class="title">Foreground Layer</div>
-      </div>
-      <div class="parallax__layer parallax__layer--base">
-        <div class="title">Base Layer</div>
+      <div class="parallax__layer--back">
+        <div class="title"> Coming soon...  </div>
       </div>
     </div>
-    <div id="group6" class="parallax__group">
-      <div class="parallax__layer parallax__layer--back">
-        <div class="title">Background Layer</div>
-      </div>
-      <div class="parallax__layer parallax__layer--base">
-        <div class="title">Base Layer</div>
-      </div>
-    </div>
-    <div id="group7" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base">
-        <div class="title">Base Layer</div>
-      </div>
-    </div> -->
 
   </div>
 
